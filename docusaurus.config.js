@@ -23,7 +23,7 @@ const config = {
 
   /* GitHub / Cloudflare 共用（由上方动态注入） */
   url: SITE_URL,
-  baseUrl: BASE_URL,
+  baseUrl: '/',
 
   /* GitHub Pages 部署 (org/user & repo) — 不在 GitHub 可忽略 */
   organizationName: 'camthink-ai',
@@ -40,7 +40,7 @@ const config = {
     locales: ['zh-Hans', 'en'],
     localeConfigs: {
       'zh-Hans': { htmlLang: 'zh-Hans', label: '中文' },
-      en:        { htmlLang: 'en-US',   label: 'English' },
+      en:       { htmlLang: 'en-US',   label: 'English' },
     },
   },
 
@@ -56,12 +56,22 @@ const config = {
         language: ['en', 'zh'],
         highlightSearchTermsOnTargetPage: true,
         explicitSearchResultPath: true,
-        docsRouteBasePath: '/docs',
+        docsRouteBasePath: '/',
         indexDocs: true,
         indexBlog: false,
         docsDir: 'docs',
       },
     ],
+    [ '@docusaurus/plugin-client-redirects',
+      {
+        redirects: [
+          {
+            from: '/',
+            to: '/docs',
+          },
+        ],
+      }
+    ]
   ],
   markdown: { mermaid: true },
   themes: ['@docusaurus/theme-mermaid'],
@@ -74,7 +84,7 @@ const config = {
         docs: {
           sidebarPath: './sidebars.js',
           editUrl: undefined,  // 关闭 “编辑此页”
-          routeBasePath: '/',
+          routeBasePath: '/docs',
         },
         blog: false,
         theme: { customCss: './src/css/custom.css' },
@@ -95,6 +105,7 @@ const config = {
           alt: 'CamThink',
           src: 'img/logo.svg',
           srcDark: 'img/logo_dark.svg',
+          href: '/docs',
         },
         items: [
           // { type: 'docSidebar', sidebarId: 'tutorialSidebar', position: 'left', label: 'Docs' },
