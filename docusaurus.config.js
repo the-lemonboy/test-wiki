@@ -23,7 +23,7 @@ const config = {
 
   /* GitHub / Cloudflare 共用（由上方动态注入） */
   url: SITE_URL,
-  baseUrl: '/',
+  baseUrl: BASE_URL,
 
   /* GitHub Pages 部署 (org/user & repo) — 不在 GitHub 可忽略 */
   organizationName: 'camthink-ai',
