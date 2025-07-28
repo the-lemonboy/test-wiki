@@ -4,12 +4,21 @@ import { themes as prismThemes } from 'prism-react-renderer';
 /* -------------------------------------------------- */
 /* 1️⃣  环境检测 / 动态变量                             */
 /* -------------------------------------------------- */
+// 环境检测 - 检查是否在 GitHub Actions 中运行
 const IS_GITHUB = process.env.GITHUB_ACTIONS === 'true';
 const BASE_URL  = process.env.BASE_URL  // 手动覆盖优先
   ?? (IS_GITHUB ? '/test-wiki/' : '/');
 
 const SITE_URL  = process.env.SITE_URL  // 手动覆盖优先
-  ?? (IS_GITHUB ? 'https://camthink-ai.github.io' : 'https://docs.camthink.ai');
+  ?? (IS_GITHUB ? 'https://the-lemonboy.github.io' : 'https://docs.camthink.ai');
+
+// 调试信息 - 构建时输出环境信息
+console.log('🔍 Environment Detection:', {
+  GITHUB_ACTIONS: process.env.GITHUB_ACTIONS,
+  IS_GITHUB,
+  BASE_URL,
+  SITE_URL
+});
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -24,6 +33,14 @@ const config = {
   /* GitHub / Cloudflare 共用（由上方动态注入） */
   url: SITE_URL,
   baseUrl: BASE_URL,
+  
+  // 确保静态资源路径正确
+  trailingSlash: false,
+  
+  // 强制设置静态资源路径
+  staticDirectories: ['static', 'public'],
+
+
 
   /* GitHub Pages 部署 (org/user & repo) — 不在 GitHub 可忽略 */
   organizationName: 'the-lemonboy',
@@ -56,7 +73,7 @@ const config = {
         language: ['en', 'zh'],
         highlightSearchTermsOnTargetPage: true,
         explicitSearchResultPath: true,
-        docsRouteBasePath: '/',
+        docsRouteBasePath: '/docs',
         indexDocs: true,
         indexBlog: false,
         docsDir: 'docs',
@@ -67,7 +84,7 @@ const config = {
         redirects: [
           {
             from: '/',
-            to: '/docs',
+            to: '/docs/',
           },
         ],
       }
@@ -105,7 +122,7 @@ const config = {
           alt: 'CamThink',
           src: 'img/logo.svg',
           srcDark: 'img/logo_dark.svg',
-          href: '/docs',
+          href: '/docs/',
         },
         items: [
           // { type: 'docSidebar', sidebarId: 'tutorialSidebar', position: 'left', label: 'Docs' },
@@ -123,7 +140,7 @@ const config = {
       footer: {
         style: 'dark',
         links: [
-          { title: 'Wiki',      items: [{ label: 'Wiki', to: '/docs/Welcome' }] },
+          { title: 'Wiki',      items: [{ label: 'Wiki', to: '/docs/' }] },
           { title: 'Community', items: [
               { label: 'Discord', href: 'https://discord.com/invite/6TZb2Y8WKx' },
               { label: 'X',       href: 'https://x.com/CamThinkAI' },
@@ -136,5 +153,14 @@ const config = {
       prism: { theme: prismThemes.github, darkTheme: prismThemes.dracula },
     }),
 };
+
+
+console.log('🔍 Environment Detection:', {
+  GITHUB_ACTIONS: process.env.GITHUB_ACTIONS,
+  IS_GITHUB,
+  BASE_URL,
+  SITE_URL
+});
+
 
 export default config;
