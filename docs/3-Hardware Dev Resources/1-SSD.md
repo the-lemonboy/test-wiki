@@ -1,3 +1,9 @@
+---
+id: ssd
+title: SSD
+sidebar_label: SSD
+---
+
 import AccessoriesTable from '@site/src/components/AccessoriesTable';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

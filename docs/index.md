@@ -1,3 +1,9 @@
+---
+id: index
+title: Welcome
+sidebar_label: Welcome
+---
+
 import DocumentList from '@site/src/components/DocumentList';
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';

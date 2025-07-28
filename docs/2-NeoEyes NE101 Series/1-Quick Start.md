@@ -1,3 +1,9 @@
+---
+id: quick-start
+title: Quick Start
+sidebar_label: Quick Start
+---
+
 import AccessoriesTable from '@site/src/components/AccessoriesTable';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

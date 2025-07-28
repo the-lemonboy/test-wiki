@@ -1,3 +1,9 @@
+---
+id: overview
+title: Overview
+sidebar_label: Overview
+---
+
 import Link from "@docusaurus/Link";
 import SupportGrid from '@site/src/components/SupportGrid';
 import AccessoriesTable from '@site/src/components/AccessoriesTable';
