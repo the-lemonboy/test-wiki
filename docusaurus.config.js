@@ -13,12 +13,6 @@ const SITE_URL  = process.env.SITE_URL  // 手动覆盖优先
   ?? (IS_GITHUB ? 'https://the-lemonboy.github.io' : 'https://docs.camthink.ai');
 
 // 调试信息 - 构建时输出环境信息
-console.log('🔍 Environment Detection:', {
-  GITHUB_ACTIONS: process.env.GITHUB_ACTIONS,
-  IS_GITHUB,
-  BASE_URL,
-  SITE_URL
-});
 
 
 
