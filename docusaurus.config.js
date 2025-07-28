@@ -20,6 +20,8 @@ console.log('🔍 Environment Detection:', {
   SITE_URL
 });
 
+
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   /* -------------------------------------------------- */
@@ -42,7 +44,8 @@ const config = {
 
 
 
-  
+
+
 
   /* GitHub Pages 部署 (org/user & repo) — 不在 GitHub 可忽略 */
   organizationName: 'the-lemonboy',
