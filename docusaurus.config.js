@@ -29,8 +29,8 @@ const config = {
   favicon: 'img/favicon.ico',
 
   /* GitHub / Cloudflare 共用（由上方动态注入） */
-  url: SITE_URL,
-  baseUrl: BASE_URL,
+  url: 'https://the-lemonboy.github.io',
+  baseUrl: '/test-wiki/',
   
   // 确保静态资源路径正确
   trailingSlash: false,
@@ -84,8 +84,8 @@ const config = {
       {
         redirects: [
           {
-            from: '/',
-            to: '/docs/',
+            from: '/test-wiki/',
+            to: '/test-wiki/docs/',
           },
         ],
       }
