@@ -3,7 +3,7 @@ name: Deploy Docusaurus to GitHub Pages (peaceiris)
 on:
   push:
     branches:
-      - main          # 监听 main 分支推送
+      - master          # 监听 main 分支推送
 
 ######################################################################
 # 让 workflow 自带的 GITHUB_TOKEN 拥有写入权限，才能推送到 gh-pages 分支
