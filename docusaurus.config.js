@@ -29,8 +29,8 @@ const config = {
   favicon: 'img/favicon.ico',
 
   /* GitHub / Cloudflare 共用（由上方动态注入） */
-  url: 'https://the-lemonboy.github.io',
-  baseUrl: '/test-wiki/',
+  url: SITE_URL,
+  baseUrl: BASE_URL,
   
   // 确保静态资源路径正确
   trailingSlash: false,
@@ -80,16 +80,16 @@ const config = {
         docsDir: 'docs',
       },
     ],
-    [ '@docusaurus/plugin-client-redirects',
-      {
-        redirects: [
-          {
-            from: '/test-wiki/',
-            to: '/test-wiki/docs/',
-          },
-        ],
-      }
-    ]
+    // [ '@docusaurus/plugin-client-redirects',
+    //   {
+    //     redirects: [
+    //       {
+    //         from: '/',
+    //         to: '/docs/',
+    //       },
+    //     ],
+    //   }
+    // ]
   ],
   markdown: { mermaid: true },
   themes: ['@docusaurus/theme-mermaid'],
