@@ -80,16 +80,6 @@ const config = {
         docsDir: 'docs',
       },
     ],
-    // [ '@docusaurus/plugin-client-redirects',
-    //   {
-    //     redirects: [
-    //       {
-    //         from: '/',
-    //         to: '/docs/',
-    //       },
-    //     ],
-    //   }
-    // ]
   ],
   markdown: { mermaid: true },
   themes: ['@docusaurus/theme-mermaid'],
@@ -102,7 +92,7 @@ const config = {
         docs: {
           sidebarPath: './sidebars.js',
           editUrl: undefined,  // 关闭 “编辑此页”
-          routeBasePath: '/docs',
+          routeBasePath: 'docs',
         },
         blog: false,
         theme: { customCss: './src/css/custom.css' },
